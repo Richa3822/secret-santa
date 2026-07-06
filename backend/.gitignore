@@ -7,3 +7,4 @@ backend/uploads/*
 backend/outputs/*
 !backend/uploads/.gitkeep
 !backend/outputs/.gitkeep
+backend/tests/temp-output/
