@@ -1,0 +1,264 @@
+:root {
+  --paper: #F7F1E3;
+  --ink: #1B3A2F;
+  --cranberry: #A6303F;
+  --cranberry-dark: #7E2230;
+  --gold: #B8860B;
+  --sage: #DCE5DD;
+  --white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--paper);
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(27, 58, 47, 0.06) 1px, transparent 0);
+  background-size: 24px 24px;
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+/* --- Signature element: die-cut gift tag header --- */
+.tag-header {
+  position: relative;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 36px 44px 32px 60px;
+  border-radius: 4px 28px 4px 4px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 24px rgba(27, 58, 47, 0.25);
+}
+
+.tag-header::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 14px;
+  height: 14px;
+  background: var(--paper);
+  border-radius: 50%;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.tag-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 28px 28px 0;
+  border-color: transparent var(--paper) transparent transparent;
+  opacity: 0.15;
+}
+
+.tag-header h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.tag-header p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* --- Card / form section --- */
+.card {
+  background: var(--white);
+  border: 1px solid var(--sage);
+  border-radius: 10px;
+  padding: 28px 32px;
+  margin-bottom: 24px;
+}
+
+.card h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 20px;
+  color: var(--ink);
+}
+
+/* --- File upload --- */
+.file-upload {
+  margin-bottom: 18px;
+}
+
+.file-upload label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.file-upload .required {
+  color: var(--cranberry);
+}
+
+.file-upload input[type="file"] {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  padding: 8px;
+  border: 1.5px dashed var(--sage);
+  border-radius: 6px;
+  width: 100%;
+  background: var(--paper);
+  cursor: pointer;
+}
+
+/* --- Button --- */
+.btn-primary {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--cranberry);
+  color: var(--white);
+  border: none;
+  padding: 13px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--cranberry-dark);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  background: var(--white);
+  color: var(--ink);
+  border: 1.5px solid var(--gold);
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: var(--sage);
+}
+
+/* --- Error --- */
+.error-banner {
+  border-left: 3px solid var(--cranberry);
+  background: rgba(166, 48, 63, 0.06);
+  color: var(--cranberry-dark);
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-top: 16px;
+}
+
+/* --- Results table (styled like a manifest) --- */
+.results-card {
+  background: var(--white);
+  border: 1px solid var(--sage);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.results-card h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  padding: 24px 32px 0;
+  margin: 0 0 4px;
+}
+
+.results-subtitle {
+  padding: 0 32px 20px;
+  font-size: 0.85rem;
+  color: var(--ink);
+  opacity: 0.6;
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  opacity: 0.5;
+  padding: 10px 32px;
+  border-top: 1px solid var(--sage);
+  border-bottom: 1px solid var(--sage);
+}
+
+tbody td {
+  padding: 14px 32px;
+  border-bottom: 1px solid var(--sage);
+  font-size: 0.92rem;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: rgba(220, 229, 221, 0.3);
+}
+
+.name {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.email {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--ink);
+  opacity: 0.55;
+  display: block;
+  margin-top: 2px;
+}
+
+.arrow-cell {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1rem;
+  width: 40px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--sage);
+}
+
+.download-row {
+  padding: 20px 32px;
+  border-top: 1px solid var(--sage);
+  background: var(--paper);
+}
